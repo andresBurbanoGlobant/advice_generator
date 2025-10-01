@@ -1,7 +1,79 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+  --blue-200: hsl(193, 38%, 86%);
+  --blue-600: hsl(217, 19%, 38%);
+  --blue-900: hsl(217, 19%, 24%);
+  --blue-950: hsl(218, 23%, 16%);
+  --green-300: hsl(150, 100%, 66%);
+
+  --bg-body: var(--blue-950);
+  --bg-container: var(--blue-900);
+  --text-quote: var(--blue-200);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-body);
+  font-family: 'Manrope', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  padding: 0 16px;
+}
+
+.main-container {
+  width: 100vw;
+  padding: 16px;
+}
+
+.advice-card {
+  background-color: var(--bg-container);
   text-align: center;
-  border: 1px solid red;
+  border-radius: 8px;
+  padding: 44px 24px 64px;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.quote {
+  color: var(--text-quote);
+  font-size: 24px;
+  margin: 24px 0;
+  letter-spacing: 0.25px;
+}
+
+.divider {
+  background-image: url(./assets/pattern-divider-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  aspect-ratio: 295/16;
+}
+
+.dice-container {
+  position: relative;
+
+  .dice-button {
+    position: absolute;
+    left: calc(50% - 32px);
+    top: 32px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--green-300);
+    background-image: url(./assets/icon-dice.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
 }
