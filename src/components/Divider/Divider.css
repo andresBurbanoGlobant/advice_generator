@@ -1,0 +1,6 @@
+.divider {
+  background-image: url(../../assets/pattern-divider-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  aspect-ratio: 295/16;
+}

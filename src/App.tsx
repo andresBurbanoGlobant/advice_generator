@@ -1,27 +1,14 @@
 import { useState } from 'react';
-import { Title } from './components/Title/Title';
+import { Title, Divider, Quote } from './components';
+import { fetchRandomAdvice } from './services';
+import { Advice } from './types';
 import './App.css';
-
-interface Advice {
-  id: number | undefined;
-  advice: string;
-}
 
 function App() {
   const [advice, setAdvice] = useState<Advice>({
     id: undefined,
     advice: 'Be Happy ',
   });
-
-  async function fetchRandomAdvice() {
-    const url = 'https://api.adviceslip.com/advice';
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error('Something went wrong!!!');
-    }
-
-    return response.json();
-  }
 
   const handleFetchAdvice = async () => {
     try {
@@ -36,8 +23,8 @@ function App() {
     <div className="main-container">
       <div className="advice-card">
         <Title text={`ADVICE #${advice.id}`} />
-        <blockquote className="quote">{`“ ${advice.advice} ”`}</blockquote>
-        <div className="divider"></div>
+        <Quote quote={advice.advice} />
+        <Divider />
         <div className="dice-container">
           <button onClick={handleFetchAdvice} className="dice-button"></button>
         </div>

@@ -45,20 +45,6 @@ body {
   margin: 0 auto;
 }
 
-.quote {
-  color: var(--text-quote);
-  font-size: 24px;
-  margin: 24px 0;
-  letter-spacing: 0.25px;
-}
-
-.divider {
-  background-image: url(./assets/pattern-divider-mobile.svg);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  aspect-ratio: 295/16;
-}
-
 .dice-container {
   position: relative;
 
