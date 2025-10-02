@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Title } from './Title';
 
 const meta = {
@@ -12,5 +12,19 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => <Title />,
+  args: {
+    text: 'testing text',
+  },
+};
+
+export const WithAdviceNumber: Story = {
+  args: {
+    text: 'ADVICE #117',
+  },
+};
+
+export const LongText: Story = {
+  args: {
+    text: 'ADVICE #999 WITH A VERY LONG TITLE',
+  },
 };
