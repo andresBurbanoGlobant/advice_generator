@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Title, Divider, Quote } from './components';
 import { fetchRandomAdvice } from './services';
 import { Advice } from './types';
@@ -19,14 +19,18 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    handleFetchAdvice();
+  }, []);
+
   return (
-    <div className="main-container">
-      <div className="advice-card">
+    <div className='main-container'>
+      <div className='advice-card'>
         <Title text={`ADVICE #${advice.id}`} />
         <Quote quote={advice.advice} />
         <Divider />
-        <div className="dice-container">
-          <button onClick={handleFetchAdvice} className="dice-button"></button>
+        <div className='dice-container'>
+          <button onClick={handleFetchAdvice} className='dice-button'></button>
         </div>
       </div>
     </div>
