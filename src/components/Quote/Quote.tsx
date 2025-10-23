@@ -5,5 +5,5 @@ type Props = {
 };
 
 export const Quote = ({ quote }: Props) => (
-  <blockquote className="quote">{`“ ${quote} ”`}</blockquote>
+  <blockquote className='quote'>{`“ ${quote} ”`}</blockquote>
 );
